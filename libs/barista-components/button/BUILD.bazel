@@ -20,3 +20,63 @@ stylelint(
     name = "stylelint",
     srcs = glob(["**/*.scss"]),
 )
+
+copy_to_bin(
+    name = "copy_config",
+    srcs = [":jest.config.js"],
+)
+
+barista_jest(
+    name = "button_test",
+    srcs = ["button_test_compile"],
+    jest_config = ":jest.config.js",
+    root_jest_config = "//:jest.config.js",
+    deps = [
+        ":button_test_compile",
+    ],
+)
+
+ts_config(
+    name = "tsconfig_test",
+    src = "tsconfig.spec.json",
+    deps = [
+        "tsconfig.json",
+        "//:tsconfig.json",
+    ],
+)
+
+ts_library(
+    name = "button_test_compile",
+    srcs = glob(
+        include = [
+            "**/*.spec.ts",
+            "src/test-setup.ts",
+        ],
+    ),
+    data = ["//:jest.config.js"],
+    tsconfig = "tsconfig_test",
+    devmode_module = "commonjs",
+    module_name = "@dynatrace/barista-components/button",
+    deps = [
+        ":button",
+        "//libs/barista-components/icon",
+        "//libs/testing/browser",
+        "@npm//@types/jest",
+        "@npm//@angular/core",
+        "@npm//@angular/common",
+        "@npm//@angular/platform-browser",
+        "@npm//zone.js",
+    ],
+)
+
+filegroup(
+    name = "button_test_compile_prod",
+    srcs = ["button_test_compile"],
+    output_group = "es5_sources",
+)
+
+filegroup(
+    name = "button_compile_prod",
+    srcs = ["button"],
+    output_group = "es6_sources",
+)

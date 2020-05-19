@@ -18,8 +18,12 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es2015",
+    "esModuleInterop": true,
     "typeRoots": ["node_modules/@types", "@types"],
     "paths": {
+      "@dynatrace/barista-components/random": [
+        "libs/barista-components/random/index.ts"
+      ],
       "@dynatrace/barista-components/alert": [
         "libs/barista-components/alert/index.ts"
       ],

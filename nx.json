@@ -148,6 +148,9 @@
     "button": {
       "tags": ["scope:components", "type:library"]
     },
+    "random": {
+      "tags": ["scope:components", "type:library"]
+    },
     "button-group": {
       "tags": ["scope:components", "type:library"]
     },

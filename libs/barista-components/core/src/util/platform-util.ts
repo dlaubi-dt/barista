@@ -19,14 +19,7 @@ import { ElementRef } from '@angular/core';
 
 import { isNumber, isString } from './type-util';
 
-/**
- * @internal
- *
- * Replaces an old class on an element with a new on.
- * Both can also be null. In this case it just adds the new one or removes the old one.
- * If the optional Renderer is not provided it uses the browser specific classList.
- */
-export function _replaceCssClass(
+export function replaceCssClass(
   elOrRef: any, // tslint:disable-line:no-any
   oldClass: string | null,
   newClass: string | null,

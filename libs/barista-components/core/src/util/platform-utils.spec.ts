@@ -20,11 +20,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 
-import {
-  _hasCssClass,
-  _parseCssValue,
-  _replaceCssClass,
-} from './platform-util';
+import { _hasCssClass, _parseCssValue, replaceCssClass } from './platform-util';
 
 describe('PlatformUtil', () => {
   beforeEach(async(() => {
@@ -41,7 +37,7 @@ describe('PlatformUtil', () => {
       const testComponent = fixture.debugElement.componentInstance;
 
       expect(testComponent.testElement.className).toBe('old-class');
-      _replaceCssClass(testComponent.testElement, 'old-class', 'new-class');
+      replaceCssClass(testComponent.testElement, 'old-class', 'new-class');
       expect(testComponent.testElement.className).toBe('new-class');
     });
 
@@ -50,7 +46,7 @@ describe('PlatformUtil', () => {
       const testComponent = fixture.debugElement.componentInstance;
 
       expect(testComponent.testElement.className).toBe('old-class');
-      _replaceCssClass(testComponent.testElement, 'old-class', null);
+      replaceCssClass(testComponent.testElement, 'old-class', null);
       expect(testComponent.testElement.className).toBe('');
     });
 
@@ -59,7 +55,7 @@ describe('PlatformUtil', () => {
       const testComponent = fixture.debugElement.componentInstance;
 
       expect(testComponent.testElement.className).toBe('old-class');
-      _replaceCssClass(testComponent.testElement, null, 'new-class');
+      replaceCssClass(testComponent.testElement, null, 'new-class');
       expect(testComponent.testElement.className).toBe('old-class new-class');
     });
 
@@ -68,7 +64,7 @@ describe('PlatformUtil', () => {
       const testComponent = fixture.debugElement.componentInstance;
 
       expect(testComponent.testElement.className).toBe('old-class');
-      _replaceCssClass(testComponent.elementRef, 'old-class', 'new-class');
+      replaceCssClass(testComponent.elementRef, 'old-class', 'new-class');
       expect(testComponent.testElement.className).toBe('new-class');
     });
   });

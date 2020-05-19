@@ -1,0 +1,63 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_config")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
+load("//tools/bazel_rules:index.bzl", "ng_module_view_engine", "ng_module", "jest")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_module_view_engine(
+    name = "random",
+    srcs = glob(
+        include = ["**/*.ts"],
+        exclude = [
+            "**/*.spec.ts",
+            "src/test-setup.ts",
+        ],
+    ),
+    angular_assets = [
+        ":src/rand.css",
+        ":src/rand.html",
+    ],
+    module_name = "@dynatrace/barista-components/random",
+    tsconfig = "tsconfig_lib",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+    ],
+)
+
+sass_binary(
+    name = "random_scss",
+    src = "src/rand.scss",
+)
+
+jest(
+    name = "test",
+    srcs = glob(include = ["**/*.spec.ts"]),
+    jest_config = ":jest.config.json",
+    setup_file = ":src/test-setup.ts",
+    ts_config = ":tsconfig_test",
+    deps = [
+        ":random",
+        "@npm//@angular/core",
+        "@npm//@angular/platform-browser",
+        "@npm//@types/jest",
+    ],
+)
+
+ts_config(
+    name = "tsconfig_lib",
+    src = "tsconfig.lib.json",
+    deps = [
+        "tsconfig.json",
+        "//libs/barista-components:tsconfig",
+    ],
+)
+
+ts_config(
+    name = "tsconfig_test",
+    src = "tsconfig.spec.json",
+    deps = [
+        "tsconfig.json",
+        "//:tsconfig.json",
+    ],
+)

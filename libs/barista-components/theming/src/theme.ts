@@ -28,7 +28,7 @@ import { NEVER, Subject, Subscription } from 'rxjs';
 import {
   DtLogger,
   DtLoggerFactory,
-  _replaceCssClass,
+  replaceCssClass,
 } from '@dynatrace/barista-components/core';
 
 import {
@@ -131,12 +131,12 @@ export class DtTheme implements OnDestroy {
   private _updateHostClasses(): void {
     const currentClassNames = this._classNames;
     const newClassNames = this._genClassNames();
-    _replaceCssClass(
+    replaceCssClass(
       this._elementRef,
       currentClassNames.name,
       newClassNames.name,
     );
-    _replaceCssClass(
+    replaceCssClass(
       this._elementRef,
       currentClassNames.variant,
       newClassNames.variant,

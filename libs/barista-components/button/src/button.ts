@@ -36,7 +36,7 @@ import {
   HasElementRef,
   mixinColor,
   mixinDisabled,
-  _replaceCssClass,
+  replaceCssClass,
 } from '@dynatrace/barista-components/core';
 import { DtIcon } from '@dynatrace/barista-components/icon';
 
@@ -147,7 +147,7 @@ export class DtButton extends _DtButtonMixinBase
   }
 
   private __replaceCssClass(newClass?: string, oldClass?: string): void {
-    _replaceCssClass(
+    replaceCssClass(
       this._elementRef,
       `dt-button-${oldClass}`,
       `dt-button-${newClass}`,

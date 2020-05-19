@@ -16,7 +16,7 @@
 
 // tslint:disable no-lifecycle-call no-use-before-declare no-magic-numbers
 // tslint:disable no-any max-file-line-count no-unbound-method use-component-selector
-
+import 'jest-preset-angular';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Component } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
@@ -26,6 +26,12 @@ import { DtButtonModule } from '@dynatrace/barista-components/button';
 import { DtIconModule } from '@dynatrace/barista-components/icon';
 
 import { createComponent } from '@dynatrace/testing/browser';
+
+console.log('#####################################');
+//@ts-ignore
+console.log(require.resolve('@dynatrace/barista-components/icon'));
+//@ts-ignore
+//process.exit(1)
 
 describe('DtButton', () => {
   beforeEach(async(() => {

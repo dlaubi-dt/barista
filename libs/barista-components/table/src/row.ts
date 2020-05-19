@@ -28,8 +28,7 @@ import { Subscription, merge } from 'rxjs';
 import {
   _addCssClass,
   _removeCssClass,
-  _replaceCssClass,
-  isDefined,
+  replaceCssClass,
 } from '@dynatrace/barista-components/core';
 
 import { DtCell } from './cell';
@@ -185,7 +184,7 @@ export class DtRow extends CdkRow implements OnDestroy {
     }
 
     if (hasWarning) {
-      _replaceCssClass(
+      replaceCssClass(
         this._elementRef.nativeElement,
         'dt-color-error',
         'dt-color-warning',
@@ -195,7 +194,7 @@ export class DtRow extends CdkRow implements OnDestroy {
     }
 
     if (hasError) {
-      _replaceCssClass(
+      replaceCssClass(
         this._elementRef.nativeElement,
         'dt-color-warning',
         'dt-color-error',

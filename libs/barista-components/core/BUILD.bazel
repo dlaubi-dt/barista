@@ -30,3 +30,11 @@ stylelint(
     name = "stylelint",
     srcs = glob(["**/*.scss"]),
 )
+
+filegroup(
+    name = "source_files",
+    srcs = glob(["**/*.ts"]),
+    data = [
+        ":package.json",
+    ],
+)
