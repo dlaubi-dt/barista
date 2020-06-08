@@ -1,4 +1,11 @@
-load("//tools/bazel_rules:index.bzl", "architect")
+load("//tools/bazel_rules:index.bzl", "architect", "stylelint")
+
+package(default_visibility = ["//:__subpackages__"])
+
+stylelint(
+    name = "stylelint",
+    srcs = glob(["**/*.scss"]),
+)
 
 architect(
     name = "barista-design-system",
