@@ -28,3 +28,8 @@
 
 !/WORKSPACE
 !/BUILD.bazel
+!/libs
+!/tools
+!.bazelrc
+!.bazelversion
+!.bazelignore
