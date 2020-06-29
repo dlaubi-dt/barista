@@ -359,6 +359,9 @@
     },
     "shared-data-access-strapi": {
       "tags": ["scope:cms", "type:shared"]
+    },
+    "shared-design-system-ui": {
+      "tags": []
     }
   }
 }
