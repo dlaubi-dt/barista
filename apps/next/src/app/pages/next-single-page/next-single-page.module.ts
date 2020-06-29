@@ -15,13 +15,18 @@
  */
 
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import {
   BaPageGuard,
   BaPageService,
 } from '@dynatrace/shared/data-access-strapi';
 import { NextSinglePage } from './next-single-page';
+import {
+  SharedDesignSystemUiModule,
+  DS_CONTENT_COMPONENT_LIST_TOKEN,
+} from '@dynatrace/shared/design-system/ui';
+import { NextPageFooter } from './components/next-page-footer';
 
 export const routes: Route[] = [
   {
@@ -31,9 +36,22 @@ export const routes: Route[] = [
   },
 ];
 
+export const DS_CONTENT_TYPES: Type<unknown>[] = [];
+
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [],
-  providers: [BaPageGuard, BaPageService],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedDesignSystemUiModule,
+  ],
+  declarations: [NextSinglePage, NextPageFooter],
+  providers: [
+    BaPageGuard,
+    BaPageService,
+    {
+      provide: DS_CONTENT_COMPONENT_LIST_TOKEN,
+      useValue: DS_CONTENT_TYPES,
+    },
+  ],
 })
 export class NextSinglePageModule {}
