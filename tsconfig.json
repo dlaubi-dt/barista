@@ -246,6 +246,9 @@
       ],
       "@dynatrace/shared/design-system/ui": [
         "libs/shared/design-system/ui/src/index.ts"
+      ],
+      "@dynatrace/shared/design-system/interfaces": [
+        "libs/shared/design-system/interfaces/src/index.ts"
       ]
     },
     "plugins": [

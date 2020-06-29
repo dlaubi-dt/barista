@@ -4279,6 +4279,41 @@
           "style": "scss"
         }
       }
+    },
+    "shared-design-system-interfaces": {
+      "projectType": "library",
+      "root": "libs/shared/design-system/interfaces",
+      "sourceRoot": "libs/shared/design-system/interfaces/src",
+      "prefix": "dynatrace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/design-system/interfaces/tsconfig.lib.json",
+              "libs/shared/design-system/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/design-system/interfaces/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/design-system/interfaces/jest.config.js",
+            "tsConfig": "libs/shared/design-system/interfaces/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/design-system/interfaces/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "defaultProject": "dev",
