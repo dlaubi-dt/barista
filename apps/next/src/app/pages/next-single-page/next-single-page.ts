@@ -15,7 +15,7 @@
  */
 
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { BaSinglePageContent } from '@dynatrace/shared/barista-definitions';
+import { BaSinglePageContent } from '@dynatrace/shared/design-system/interfaces';
 import { BaPageService } from '@dynatrace/shared/data-access-strapi';
 
 @Component({

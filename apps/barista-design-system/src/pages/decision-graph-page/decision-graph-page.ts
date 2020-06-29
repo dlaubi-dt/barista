@@ -25,7 +25,7 @@ import {
   Injector,
 } from '@angular/core';
 import { BaPageService } from 'libs/shared/data-access-strapi/src/lib/page.service';
-import { BaSinglePageContent } from '@dynatrace/shared/barista-definitions';
+import { BaSinglePageContent } from '@dynatrace/shared/design-system/interfaces';
 import { createComponent } from '../../utils/create-component';
 import {
   BaDecisionGraph,

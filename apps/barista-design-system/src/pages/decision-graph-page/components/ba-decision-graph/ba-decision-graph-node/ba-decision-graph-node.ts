@@ -24,7 +24,10 @@ import {
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
-import { BaUxdNode, BaUxdEdge } from '@dynatrace/shared/barista-definitions';
+import {
+  BaUxdNode,
+  BaUxdEdge,
+} from '@dynatrace/shared/design-system/interfaces';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 // TODO: Use lodash-es instead. PR: https://github.com/dynatrace-oss/barista/pull/846
 import { cloneDeep } from 'lodash';

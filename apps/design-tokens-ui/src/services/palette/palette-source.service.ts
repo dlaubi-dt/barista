@@ -20,7 +20,7 @@ import * as paletteSource from '@dynatrace/fluid-design-tokens-meta/aliases/pale
 import {
   FluidPaletteSourceAlias,
   FluidPaletteSource,
-} from '@dynatrace/shared/barista-definitions';
+} from '@dynatrace/shared/design-system/interfaces';
 // TODO: switch to lodash-es when available.
 import { cloneDeep } from 'lodash';
 import { stringify } from 'yaml';

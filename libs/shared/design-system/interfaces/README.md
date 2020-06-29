@@ -1,7 +1,4 @@
 # shared-design-system-interfaces
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test shared-design-system-interfaces` to execute the unit tests.
+This library contains shared interfaces and types used for the design system
+apps and tools.

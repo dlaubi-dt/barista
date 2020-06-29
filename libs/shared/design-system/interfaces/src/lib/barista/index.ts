@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
-export * from './lib/next-definitions';
+export * from './barista-backend-api-definitions';
+export * from './barista-definitions';
+export * from './example-definitions';

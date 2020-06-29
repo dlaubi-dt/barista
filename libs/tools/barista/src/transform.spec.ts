@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { BaPageLayoutType } from '@dynatrace/shared/barista-definitions';
+import { BaPageLayoutType } from '@dynatrace/shared/design-system/interfaces';
 
 import {
   componentTagsTransformer,

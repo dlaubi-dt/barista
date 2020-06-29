@@ -19,7 +19,7 @@ import { join } from 'path';
 import {
   BaSinglePageMeta,
   BaPageLayoutType,
-} from '@dynatrace/shared/barista-definitions';
+} from '@dynatrace/shared/design-system/interfaces';
 import { environment } from '@environments/barista-environment';
 import { isPublicBuild } from '@dynatrace/shared/node';
 
