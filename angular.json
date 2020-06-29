@@ -3571,42 +3571,6 @@
       },
       "schematics": {}
     },
-    "shared-barista-definitions": {
-      "root": "libs/shared/barista-definitions",
-      "sourceRoot": "libs/shared/barista-definitions/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["libs/shared/barista-definitions/tsconfig.lib.json"],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/barista-definitions/**"
-            ]
-          }
-        }
-      }
-    },
-    "shared-next-definitions": {
-      "root": "libs/shared/next-definitions",
-      "sourceRoot": "libs/shared/next-definitions/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["libs/shared/next-definitions/tsconfig.lib.json"],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/next-definitions/**"
-            ]
-          }
-        }
-      }
-    },
     "testing-node": {
       "root": "libs/testing/node",
       "sourceRoot": "libs/testing/node/src",

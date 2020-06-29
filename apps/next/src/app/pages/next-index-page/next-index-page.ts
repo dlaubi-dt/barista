@@ -16,7 +16,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { BaPageService } from '@dynatrace/shared/data-access-strapi';
-import { NextPage } from '@dynatrace/shared/next-definitions';
+import { NextPage } from '@dynatrace/shared/design-system/interfaces';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({

@@ -54,12 +54,6 @@
     "tools-shareable-examples": {
       "tags": ["type:tooling"]
     },
-    "shared-barista-definitions": {
-      "tags": ["type:types", "type:library"]
-    },
-    "shared-next-definitions": {
-      "tags": ["type:types", "type:library"]
-    },
     "examples": {
       "tags": ["scope:examples", "type:library"]
     },
@@ -361,10 +355,10 @@
       "tags": ["scope:cms", "type:shared"]
     },
     "shared-design-system-ui": {
-      "tags": []
+      "tags": ["type:library", "type:shared"]
     },
     "shared-design-system-interfaces": {
-      "tags": []
+      "tags": ["type:library", "type:shared"]
     }
   }
 }

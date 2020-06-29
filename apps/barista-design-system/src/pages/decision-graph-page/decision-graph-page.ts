@@ -26,7 +26,7 @@ import {
 } from '@angular/core';
 import { BaPageService } from 'libs/shared/data-access-strapi/src/lib/page.service';
 import { BaSinglePageContent } from '@dynatrace/shared/design-system/interfaces';
-import { createComponent } from '../../utils/create-component';
+import { createComponent } from '@dynatrace/shared/design-system/ui';
 import {
   BaDecisionGraph,
   BaDecisionGraphStartnode,
