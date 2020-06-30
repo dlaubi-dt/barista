@@ -410,6 +410,9 @@ jobs:
     steps:
       - prepare_job
       - run: npm run api-guard:verify
+      - store_artifacts:
+          path: dist/api-diff.patch
+          destination: api-diff.patch
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #

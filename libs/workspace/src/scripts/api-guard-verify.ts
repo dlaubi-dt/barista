@@ -18,6 +18,8 @@ import { execSync } from 'child_process';
 import { options } from 'yargs';
 import { affectedArgs } from './affected-args';
 import { getAffectedProjects } from './util';
+import { executeCommand } from '../../../shared/node/src/utils/execute-command';
+import { writeFileSync } from 'fs';
 
 export async function runApiGuardVerify(): Promise<string | null> {
   const { verifyDir, rootDir, allowModuleIdentifiers, _: inputs } = options({
@@ -73,11 +75,15 @@ if (!require.main?.filename) {
   runApiGuardVerify()
     .then((command: string | null) => {
       if (command) {
-        execSync(command, { stdio: [0, 1, 2] });
+        return executeCommand(command);
       }
     })
-    .catch((error) => {
-      console.error(error);
+    .then(() => {
+      console.log('Api guardian done, no diff found');
+    })
+    .catch((diff: string) => {
+      console.log('Diff has been found, writing patch file');
+      writeFileSync('dist/api-diff.patch', diff);
       process.exit(1);
     });
 }
