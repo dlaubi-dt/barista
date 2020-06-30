@@ -36,5 +36,5 @@ import {
 })
 export class DtAlert {
   /** The severity type of the alert. */
-  @Input() severity: 'error' | 'warning' = 'error';
+  @Input() severity: 'error' | 'warning' | 'API' = 'error';
 }
